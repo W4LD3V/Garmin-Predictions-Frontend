@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angular Styled App</title>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      font-family: 'Arial', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Garmin Predictions App</h1>
+    <p>Your one-stop tool for pace and performance analysis</p>
+  </header>  
+
+  <app-form-step-one
+    (stepCompleted)="isStepOneCompleted = true"
+    (yearsTrained)="handleYearsTrained($event)">
+  </app-form-step-one>
+
+  <app-form-step-two
+    *ngIf="isStepOneCompleted"
+    [years_trained]="years_trained"
+    (jsonResponse)="handleJsonResponse($event)">
+  </app-form-step-two>
+
+  <app-form-two-response-table
+    *ngIf="isStepOneCompleted && hasData(jsonResponseData)"
+    [jsonResponseData]="jsonResponseData">
+  </app-form-two-response-table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+input[type="file"]:hover,
+input[type="number"]:hover {
+  border-color: #d81b60;
+  background-color: #f8bbd0;
+}
+
+tr:hover td {
+  color: #c2185b;
+}
+
+header {
+  background: linear-gradient(135deg, #8e24aa, #d81b60);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+header p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}

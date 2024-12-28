@@ -1,0 +1,29 @@
+<form (submit)="calculateZones($event)">
+  <div>
+    <label for="years-select">Select Year:</label>
+    <select id="years-select" name="year" [(ngModel)]="selectedYear" required>
+      <option *ngFor="let year of years_trained" [value]="year">{{ year }}</option>
+    </select>
+  </div>
+  <div>
+    <label>Your HR Max:</label>
+    <input type="number" id="hr-max" name="hrMax" [(ngModel)]="hrMax" required />
+  </div>
+  <button type="submit">Calculate Zones</button>
+</form>
+
+<form #form="ngForm" (ngSubmit)="submitHRMax()">
+  <div *ngIf="zones.length > 0">
+    <div *ngFor="let zone of zones; let i = index">
+      <label for="zone-{{ i + 1 }}">Zone {{ i + 1 }}:</label>
+      <input
+        type="number"
+        id="zone-{{ i + 1 }}"
+        name="zone-{{ i + 1 }}"
+        [(ngModel)]="zones[i]"
+        required
+      />
+    </div>
+  </div>
+  <button type="submit" [disabled]="!hrMax || !selectedYear || zones.length < 4">Predict times!</button>
+</form>

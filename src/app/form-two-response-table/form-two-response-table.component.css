@@ -1,0 +1,34 @@
+h3 {
+    color: #8e24aa;
+    margin-bottom: 10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: linear-gradient(135deg, #d81b60, #8e24aa);
+    color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    border: none;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: rgba(255, 255, 255, 0.15);
+    font-weight: 600;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  

@@ -1,0 +1,8 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="file">Upload your Garmin run activities here:</label>
+      <input type="file" accept=".csv" id="file" name="file" (change)="onFileSelected($event)" required />
+    </div>
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+  
